@@ -18,10 +18,12 @@ garda_data = pd.read_csv("IRELAND_CRIME_GARDA_DIVISION_wise_2003-2019.csv")
 #print(garda_data.shape)  ## Check the shape of the dataset
 #print(garda_data.tail()) ##Check the bottom 5 rows
 
-#print(garda_data.columns) # to get the name of the columns
+print(garda_data.columns) # to get the name of the columns
 print(garda_data.dtypes) ##Check the data type of each column
 
-print(garda_data["REGION"].head()) ##Show only one column of the dataset. Showing REGION
+garda_df_tidy = garda_data.rename(columns = {'GARDA DIVISION': 'Division', 'TYPE OF OFFENCE': 'Offence_type'}) ##Rename column headings
+print(garda_df_tidy.columns) ##verify new headings
+##print(garda_data["REGION"].head()) ##Show only one column of the dataset. Showing REGION
 #df1 =pd.DataFrame({
 #   "city":["new york","chicago","orlando", "dublin", "galway"],
 #    "temperature": [21,14,35, 28, 19],
@@ -30,3 +32,9 @@ print(garda_data["REGION"].head()) ##Show only one column of the dataset. Showin
 #print(df1)
 
 #type(df1)
+
+#print(garda_data[garda_data.REGION == "CORK"])
+#print(garda_data.loc[467:637,["REGION","GARDA DIVISION"]]) ##Print all Indexes for Cork for columns Region and Garda Division
+
+#newdf = garda_data[(garda_data.GARDA DIVISION == "CORK")]
+#print(newdf)
