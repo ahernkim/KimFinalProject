@@ -30,7 +30,7 @@ del garda_df_tidy["OFFENCE CODE"] ##Delete unneccessary column
 
 print(garda_df_tidy.shape) ##Verify Shape. Can see one column has now been removed
 
-mini_df = garda_df_tidy.loc[: , ['2013Q1','2013Q4']]
+mini_df = garda_df_tidy.loc[: , ['2013Q1','2013Q2','2013Q3','2013Q4']]
 print('Mini Dataframe:')
 print(mini_df)
 # Get sum of values of all the columns of Mini Dataframe
